@@ -5,6 +5,7 @@ import { ROUTES } from '../../lib/routePaths.js';
 import { useReducedMotion } from '../../hooks/useReducedMotion.js';
 import { ThreeHeroCanvas } from '../../three/ThreeHeroCanvas.js';
 import { MOTION_EASINGS } from '../../animations/motionConfig.js';
+import { checkApiHealth } from '../../lib/apiClient.js';
 import styles from './HeroSection.module.css';
 
 interface ApiHealthState {
@@ -27,18 +28,17 @@ export const HeroSection: FC = () => {
   useEffect(() => {
     let isMounted = true;
 
-    fetch('/api/health')
-      .then((res) => {
-        if (!res.ok) throw new Error('API unavailable');
-        return res.json();
-      })
+    checkApiHealth()
       .then((data) => {
-        if (isMounted) {
+        if (!isMounted) return;
+        if (data && data.status === 'ok') {
           setApiHealth({
-            status: data.status === 'ok' ? 'connected' : 'unreachable',
+            status: 'connected',
             environment: data.environment,
             uptime: data.uptime,
           });
+        } else {
+          setApiHealth({ status: 'unreachable' });
         }
       })
       .catch(() => {
