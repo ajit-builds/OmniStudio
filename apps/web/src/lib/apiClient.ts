@@ -10,7 +10,27 @@ export interface ApiSubmissionResult {
   };
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+export interface HealthStatusData {
+  status: string;
+  timestamp?: string;
+  uptime?: number;
+  environment?: string;
+  service?: string;
+  version?: string;
+}
+
+const rawApiUrl = import.meta.env.VITE_API_URL || '/api';
+export const API_BASE_URL = rawApiUrl.replace(/\/+$/, '');
+
+export const checkApiHealth = async (): Promise<HealthStatusData | null> => {
+  try {
+    const res = await fetch(`${API_BASE_URL}/health`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+};
 
 export const submitContactInquiry = async (
   payload: ContactPayload,

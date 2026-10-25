@@ -803,30 +803,63 @@ npm run format     # Prettier style check across markdown, ts, tsx, css
 
 ## 11. Production Deployment & DevOps
 
-### Frontend Static Deployment (Vercel, Netlify, Cloudflare Pages)
+Studio Omni uses a decoupled deployment architecture separating the static frontend SPA from the persistent Express API:
 
-The frontend compiles to static HTML, CSS, and JavaScript in `apps/web/dist/`.
+```mermaid
+graph LR
+    User([Browser Client])
+    Vercel["<b>Vercel Edge Network</b><br/>Static SPA (apps/web)<br/>HTML / CSS / JS Chunks"]
+    Backend["<b>Persistent Node.js Host</b><br/>Render / Railway / Fly.io / Docker<br/>Express API (apps/api)"]
+    Email["<b>Resend API / SMTP</b><br/>Mail Dispatch"]
 
-1. **Build the production bundle**:
-   ```bash
-   npm run build:shared && npm run build:web
-   ```
-2. **Deploy to any modern static host** (Vercel, Netlify, Cloudflare Pages, AWS S3/CloudFront).
-3. **Configure SPA Rewrite Rule**: Ensure all non-file requests route to `/index.html`:
-   - _Vercel (`vercel.json`)_:
-     ```json
-     {
-       "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-     }
-     ```
-   - _Netlify (`_redirects`)_:
-     ```text
-     /*    /index.html   200
-     ```
+    User -->|Static Assets & Client Routing| Vercel
+    User -->|HTTP POST /api/contact (VITE_API_URL)| Backend
+    Backend -->|Dispatches Verified Inquiries| Email
+```
 
-### Backend API Server Deployment (Node.js / Docker)
+### Frontend Vercel Deployment (`apps/web`)
 
-The Express API is stateless and ready for deployment on any Node.js container or PaaS provider (Render, Railway, Fly.io, AWS ECS).
+Deploy the frontend application by importing the repository into Vercel with the following settings:
+
+| Vercel Configuration Key | Verified Setting Value | Architectural Rationale & Implementation Notes                                                                                                                                           |
+| :----------------------- | :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Root Directory**       | `apps/web`             | Isolates frontend deployment. Vercel automatically detects parent monorepo workspaces and installs dependencies from the root lockfile.                                                  |
+| **Framework Preset**     | **Vite**               | Automatically configures Vite build output and asset caching behaviors.                                                                                                                  |
+| **Build Command**        | `npm run build`        | Compiles `@studio-omni/web` into `apps/web/dist` via `tsc --noEmit && vite build`. Direct path mapping automatically resolves `@studio-omni/shared` without requiring manual pre-builds. |
+| **Output Directory**     | `dist`                 | Matches Vite's standard production output directory.                                                                                                                                     |
+| **Install Command**      | `(Platform Default)`   | Leave default. Vercel executes `npm install` from the repository root, symlinking workspace dependencies (`@studio-omni/shared`).                                                        |
+
+#### Client-Side Routing & SPA Rewrites
+
+To prevent HTTP 404 errors when visitors refresh deep routes (e.g. `/work/aether-form`, `/about`, `/contact`), [`apps/web/vercel.json`](file:///Users/ajitsingh/Desktop/OmniStudio/apps/web/vercel.json) defines a non-filesystem rewrite rule routing all virtual routes to `/index.html`:
+
+```json
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
+
+#### Frontend Environment Variables on Vercel
+
+Configure this single public variable in **Vercel Project Settings > Environment Variables**:
+
+| Variable Name  | Environment         | Example Production Value           | Description                                                                                            |
+| :------------- | :------------------ | :--------------------------------- | :----------------------------------------------------------------------------------------------------- |
+| `VITE_API_URL` | Production, Preview | `https://api.studiomni.design/api` | Base URL pointing to your deployed backend API gateway. Embedded into the client bundle at build time. |
+
+---
+
+### Backend API Server Deployment (`apps/api`)
+
+> [!IMPORTANT]
+> **Backend Architecture Distinction**: The Express backend is designed as a **persistent Node.js application** featuring in-memory sliding-window rate limiting, graceful connection draining (`SIGTERM`), and 64kb payload caps. Do **not** deploy `apps/api` as a serverless function without an external state store (such as Redis) for rate limits. Host `apps/api` on a container or PaaS provider (Render, Railway, Fly.io, AWS ECS, or Docker).
 
 #### Standalone Node.js Startup
 
