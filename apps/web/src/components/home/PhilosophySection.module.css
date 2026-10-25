@@ -1,0 +1,122 @@
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  border-top: 1px solid var(--border-primary);
+  background-color: var(--surface-primary);
+  position: relative;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5rem, 6vw, 6rem);
+}
+
+.manifestoBlock {
+  max-width: 1040px;
+}
+
+.sectionLead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-vermilion);
+  margin-bottom: 1.5rem;
+}
+
+.leadBullet {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-vermilion);
+}
+
+.manifestoHeadline {
+  font-family: var(--font-editorial);
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  font-style: italic;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-snug);
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+}
+
+.manifestoSupport {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+  max-width: 680px;
+}
+
+/* 3 Pillars Grid with Constructivist Alignment */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 3.5vw, 3rem);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--border-primary);
+}
+
+.pillarCard {
+  position: relative;
+  border-left: 2px solid var(--color-ink);
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pillarNumeral {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-vermilion);
+}
+
+.pillarTitle {
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: var(--lh-tight);
+  color: var(--color-ink);
+}
+
+.pillarText {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+}
+
+/* Architectural Constructivist Diagram Box */
+.diagramBox {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--border-primary);
+  background-color: var(--surface-secondary);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: 1rem;
+}
+
+.diagramSvg {
+  width: 100%;
+  height: auto;
+  max-height: 160px;
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .pillarsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

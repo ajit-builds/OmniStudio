@@ -1,0 +1,132 @@
+/* Typographic Classes & Rules */
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-condensed);
+  line-height: var(--lh-tight);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-editorial);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Fluid Display Roles */
+.display-hero {
+  font-family: var(--font-display);
+  font-size: var(--text-display-hero);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.display-1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.display-2 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: var(--text-primary);
+}
+
+.editorial-statement {
+  font-family: var(--font-editorial);
+  font-size: var(--text-editorial-lead);
+  font-style: italic;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-editorial);
+  color: var(--text-primary);
+}
+
+/* Headings */
+h1,
+.h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+h2,
+.h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+h3,
+.h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h3);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  letter-spacing: 0.01em;
+}
+
+/* Body Copy */
+.body-lead {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+}
+
+.body-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+}
+
+.body-small {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+}
+
+/* Micro & Architectural Labels */
+.label-micro {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-secondary);
+}
+
+.label-vermilion {
+  color: var(--color-vermilion);
+}

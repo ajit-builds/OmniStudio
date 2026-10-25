@@ -1,0 +1,128 @@
+.section {
+  padding: var(--section-spacing) 0;
+  border-bottom: 1px solid var(--border-primary);
+  background-color: var(--surface-primary);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.headerGroup {
+  max-width: 800px;
+}
+
+.sectionLead {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.leadBullet {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-vermilion);
+  display: inline-block;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-condensed);
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.subtitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-editorial-lead);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  margin: 0;
+  max-width: 58ch;
+}
+
+.diagramAndNarrative {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.diagramWrapper {
+  padding: 1.5rem;
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagramSvg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
+.intersectionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intersectionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.intersectionItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.intersectionTag {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-vermilion);
+}
+
+.itemTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.itemText {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .diagramAndNarrative {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

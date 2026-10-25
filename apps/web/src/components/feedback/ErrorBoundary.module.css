@@ -1,0 +1,58 @@
+.boundaryContainer {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--page-gutter);
+}
+
+.boundaryCard {
+  max-width: 640px;
+  width: 100%;
+  border: 1px solid var(--border-primary);
+  background-color: var(--surface-primary);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  position: relative;
+}
+
+.vermilionIndicator {
+  width: 32px;
+  height: 3px;
+  background-color: var(--color-vermilion);
+  margin-bottom: 1.5rem;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-condensed);
+  line-height: var(--lh-tight);
+  margin-bottom: 1rem;
+}
+
+.message {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  margin-bottom: 2rem;
+}
+
+.detailsBox {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-primary);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,75 @@
+.contactPage {
+  min-height: 100vh;
+  background-color: var(--color-paper);
+}
+
+.formSection {
+  padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+}
+
+@media (min-width: 960px) {
+  .layoutGrid {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+}
+
+.formCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionIndex {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-vermilion);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2);
+  line-height: var(--lh-tight);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-condensed);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.formSubtitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-body-lg);
+  line-height: var(--lh-editorial);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 960px) {
+  .infoCol {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+  }
+}

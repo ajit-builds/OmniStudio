@@ -1,0 +1,66 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  top: var(--header-height-mobile);
+  background-color: var(--surface-primary);
+  border-top: 1px solid var(--border-primary);
+  z-index: 990;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem var(--page-gutter) 3rem;
+  overflow-y: auto;
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  text-decoration: none;
+  line-height: 1;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-primary);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink:focus-visible {
+  color: var(--color-vermilion);
+}
+
+.active {
+  color: var(--color-vermilion);
+}
+
+.activeBullet {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-vermilion);
+}
+
+.mobileFooter {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tagline {
+  font-family: var(--font-editorial);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}

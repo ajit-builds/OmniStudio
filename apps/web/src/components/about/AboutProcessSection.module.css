@@ -1,0 +1,164 @@
+.section {
+  padding: var(--section-spacing) 0;
+  border-bottom: 1px solid var(--border-primary);
+  background-color: var(--surface-secondary);
+}
+
+.sectionHeader {
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.sectionLead {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.leadBullet {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-vermilion);
+  display: inline-block;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-condensed);
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.subtitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-editorial-lead);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  margin: 0;
+  max-width: 58ch;
+}
+
+.processSequence {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.stageCard {
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.stageTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stepNum {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-bold);
+  color: var(--color-vermilion);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.stepCoordinate {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--color-ink-subtle);
+}
+
+.stageTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-condensed);
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.stageTagline {
+  font-family: var(--font-editorial);
+  font-size: var(--text-body);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--color-ink-muted);
+  margin: 0 0 1rem 0;
+}
+
+.stageDesc {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+}
+
+.actionsBox {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.actionsLabel {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.actionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.actionItem {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  line-height: var(--lh-normal);
+  color: var(--color-ink-muted);
+}
+
+.actionBullet {
+  color: var(--color-vermilion);
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 1024px) {
+  .processSequence {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .processSequence {
+    grid-template-columns: 1fr;
+  }
+}

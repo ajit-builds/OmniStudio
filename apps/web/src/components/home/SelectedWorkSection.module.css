@@ -1,0 +1,218 @@
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  border-top: 1px solid var(--border-primary);
+  background-color: var(--surface-primary);
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: clamp(3.5rem, 6vw, 6rem);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.sectionLead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-vermilion);
+}
+
+.leadBullet {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-vermilion);
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 780px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-1);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  line-height: var(--lh-tight);
+}
+
+.subtitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-editorial-lead);
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+.disclaimer {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  max-width: 540px;
+  line-height: var(--lh-normal);
+}
+
+/* Projects Flow with Varied Editorial Compositions */
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4.5rem, 8vw, 8rem);
+}
+
+/* 1. Featured Split Layout */
+.projectSplit {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+/* 2. Offset Right-Aligned Layout */
+.projectOffset {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+/* 3. Full-Width Architectural Showcase */
+.projectFull {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.projectMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.metaYear {
+  color: var(--color-vermilion);
+}
+
+.metaDot {
+  color: var(--color-border);
+}
+
+.projectTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: var(--lh-tight);
+  color: var(--color-ink);
+}
+
+.projectSubtitle {
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+.projectSummary {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  max-width: 520px;
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--border-primary);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.detailItem {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  color: var(--color-ink-muted);
+  line-height: var(--lh-normal);
+}
+
+.tagsRow {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-primary);
+  padding: 0.25rem 0.65rem;
+}
+
+.actionWrapper {
+  margin-top: 0.75rem;
+}
+
+.exploreAllRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--border-primary);
+  margin-top: clamp(3.5rem, 6vw, 6rem);
+}
+
+@media (min-width: 900px) {
+  .headerRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .projectSplit {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .projectOffset {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+
+  .projectOffset .projectInfo {
+    order: 2;
+  }
+
+  .projectOffset .artworkWrapper {
+    order: 1;
+  }
+}

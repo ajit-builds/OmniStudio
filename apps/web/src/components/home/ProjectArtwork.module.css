@@ -1,0 +1,104 @@
+.figureWrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.artworkBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-primary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.artworkBox:hover {
+  border-color: var(--color-ink);
+}
+
+.aspectSquare {
+  aspect-ratio: 1 / 1;
+}
+
+.aspectWide {
+  aspect-ratio: 21 / 9;
+}
+
+.aspectTall {
+  aspect-ratio: 4 / 5;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cornerTl,
+.cornerTr,
+.cornerBl,
+.cornerBr {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+
+.cornerTl {
+  top: 0;
+  left: 0;
+  border-top: 2px solid var(--color-ink);
+  border-left: 2px solid var(--color-ink);
+}
+
+.cornerTr {
+  top: 0;
+  right: 0;
+  border-top: 2px solid var(--color-ink);
+  border-right: 2px solid var(--color-ink);
+}
+
+.cornerBl {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid var(--color-ink);
+  border-left: 2px solid var(--color-ink);
+}
+
+.cornerBr {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid var(--color-ink);
+  border-right: 2px solid var(--color-ink);
+}
+
+.projectBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-primary);
+  padding: 0.25rem 0.6rem;
+}
+
+.captionText {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-wide);
+  border-left: 2px solid var(--color-border);
+  padding-left: 0.75rem;
+}

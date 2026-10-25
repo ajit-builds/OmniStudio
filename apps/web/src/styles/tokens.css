@@ -1,0 +1,120 @@
+/**
+ * Studio Omni — Brand Design Tokens
+ * 
+ * Non-negotiable brand philosophy:
+ * - Three primary colors only: Archive Paper, Graphite Ink, Oxide Vermilion.
+ * - Architectural, editorial, tactile, confident, negative space.
+ * - No gradients, no glassmorphism, no generic pill buttons, no decorative filler.
+ */
+
+:root {
+  /* ==========================================================================
+     1. Brand Colors
+     ========================================================================== */
+
+  /* Primary Brand Palette */
+  --color-paper: #f1ede3; /* Archive Paper: main surface, editorial background */
+  --color-ink: #242522; /* Graphite Ink: typography, geometric structures */
+  --color-vermilion: #b6503b; /* Oxide Vermilion: selective emphasis, active states */
+
+  /* Neutral Tints derived from primary palette */
+  --color-paper-tint: #e8e3d7;
+  --color-paper-muted: #ddd8cb;
+  --color-ink-muted: #595b55;
+  --color-ink-subtle: #8c8e85;
+  --color-ink-faint: #c8c5bd;
+  --color-border: #d8d2c4;
+  --color-border-dark: #373834;
+  --color-vermilion-hover: #9e4330;
+  --color-vermilion-subtle: rgba(182, 80, 59, 0.12);
+
+  /* Semantic Color Roles */
+  --surface-primary: var(--color-paper);
+  --surface-secondary: var(--color-paper-tint);
+  --surface-inverted: var(--color-ink);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-muted);
+  --text-inverted: var(--color-paper);
+  --text-accent: var(--color-vermilion);
+  --border-primary: var(--color-border);
+  --border-inverted: var(--color-border-dark);
+  --focus-ring: var(--color-vermilion);
+
+  /* ==========================================================================
+     2. Typography System
+     ========================================================================== */
+
+  /* Typographic Roles */
+  --font-display: 'Antonio', 'Impact', 'Arial Narrow', sans-serif;
+  --font-editorial: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+  --font-sans:
+    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+
+  /* Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Fluid Display Scale */
+  --text-display-hero: clamp(3.25rem, 10.5vw, 9.25rem);
+  --text-display-1: clamp(2.5rem, 6.5vw, 5.25rem);
+  --text-display-2: clamp(1.85rem, 4.5vw, 3.5rem);
+  --text-editorial-lead: clamp(1.25rem, 2.4vw, 2.125rem);
+
+  /* Content Hierarchy */
+  --text-h1: clamp(1.75rem, 3vw, 2.5rem);
+  --text-h2: clamp(1.35rem, 2.2vw, 1.875rem);
+  --text-h3: clamp(1.15rem, 1.8vw, 1.375rem);
+  --text-body-lg: clamp(1.0625rem, 1.25vw, 1.25rem);
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-caption: 0.75rem;
+  --text-micro: 0.6875rem;
+
+  /* Line Heights */
+  --lh-tight: 0.88; /* Condensed display headlines */
+  --lh-snug: 1.15;
+  --lh-editorial: 1.35; /* Expressive serif statements */
+  --lh-normal: 1.6; /* Editorial body reading */
+  --lh-relaxed: 1.75;
+
+  /* Tracking / Letter Spacing */
+  --tracking-condensed: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.12em;
+  --tracking-widest: 0.22em;
+
+  /* ==========================================================================
+     3. Layout & Spacing Tokens
+     ========================================================================== */
+
+  --content-width: 1280px;
+  --content-width-wide: 1440px;
+  --page-gutter: clamp(1.25rem, 4.5vw, 4rem);
+  --section-spacing: clamp(4.5rem, 9vw, 9rem);
+  --section-spacing-sm: clamp(2.5rem, 5vw, 4.5rem);
+  --grid-gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  --header-height: 84px;
+  --header-height-mobile: 68px;
+
+  /* Architectural geometry */
+  --radius-sharp: 0px;
+  --radius-micro: 2px;
+  --border-hairline: 1px solid var(--color-border);
+  --border-ink: 1px solid var(--color-ink);
+  --border-dark-hairline: 1px solid var(--color-border-dark);
+
+  /* ==========================================================================
+     4. Motion Conventions
+     ========================================================================== */
+
+  --duration-fast: 180ms;
+  --duration-normal: 360ms;
+  --duration-slow: 700ms;
+  --ease-architectural: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}

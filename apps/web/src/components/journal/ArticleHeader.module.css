@@ -1,0 +1,103 @@
+.articleHeader {
+  padding-top: calc(var(--header-height) + clamp(1.5rem, 3.5vw, 3.5rem));
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  border-bottom: 1px solid var(--border-primary);
+  background-color: var(--surface-primary);
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.breadcrumbs {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+}
+
+.metaStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-vermilion);
+}
+
+.conceptBadge {
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-vermilion);
+  background-color: var(--color-vermilion-subtle);
+  border: 1px solid var(--color-vermilion);
+  padding: 0.2rem 0.5rem;
+}
+
+.titleWrapper {
+  max-width: 900px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.categoryLabel {
+  color: var(--color-vermilion);
+  font-weight: var(--fw-semibold);
+}
+
+.metaDivider {
+  color: var(--color-border);
+}
+
+.dateLabel,
+.timeLabel,
+.authorLabel {
+  color: var(--text-secondary);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-condensed);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.subtitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-editorial-lead);
+  font-style: italic;
+  line-height: var(--lh-editorial);
+  color: var(--color-ink-muted);
+  margin: 0;
+  max-width: 58ch;
+}
+
+.coverVisual {
+  width: 100%;
+}

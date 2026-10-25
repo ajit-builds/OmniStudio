@@ -1,0 +1,115 @@
+.featuredCard {
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-primary);
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  position: relative;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.featuredBadge {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-bold);
+  color: var(--color-vermilion);
+  background-color: var(--color-vermilion-subtle);
+  border: 1px solid var(--color-vermilion);
+  padding: 0.2rem 0.5rem;
+}
+
+.metaCategory {
+  color: var(--text-primary);
+  font-weight: var(--fw-semibold);
+}
+
+.metaDivider {
+  color: var(--color-border);
+}
+
+.metaMuted {
+  color: var(--text-secondary);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-condensed);
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+}
+
+.titleLink {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.titleLink:hover {
+  color: var(--color-vermilion);
+}
+
+.subtitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-editorial-lead);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  line-height: var(--lh-editorial);
+  margin: 0 0 1.25rem 0;
+}
+
+.excerpt {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+  margin: 0 0 1.75rem 0;
+  max-width: 54ch;
+}
+
+.actionRow {
+  margin-top: auto;
+}
+
+.artworkCol {
+  width: 100%;
+}
+
+.artworkLink {
+  display: block;
+  text-decoration: none;
+  outline: none;
+}
+
+.artworkLink:focus-visible {
+  outline: 2px solid var(--color-vermilion);
+  outline-offset: 4px;
+}
+
+@media (max-width: 960px) {
+  .featuredCard {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

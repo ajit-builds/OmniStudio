@@ -1,0 +1,61 @@
+.textLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: inherit;
+  font-weight: var(--fw-medium);
+  color: var(--text-primary);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.textLink:hover {
+  color: var(--color-vermilion);
+}
+
+.underline {
+  border-bottom: 1px solid var(--border-primary);
+  padding-bottom: 2px;
+}
+
+.underline:hover {
+  border-bottom-color: var(--color-vermilion);
+}
+
+.variantStandard {
+  color: var(--text-primary);
+}
+
+.variantVermilion {
+  color: var(--color-vermilion);
+}
+
+.variantVermilion:hover {
+  color: var(--color-vermilion-hover);
+}
+
+.variantSubtle {
+  color: var(--text-secondary);
+}
+
+.variantSubtle:hover {
+  color: var(--text-primary);
+}
+
+.variantInverted {
+  color: var(--color-paper);
+}
+
+.variantInverted:hover {
+  color: var(--color-vermilion);
+}
+
+.active {
+  color: var(--color-vermilion);
+  border-bottom-color: var(--color-vermilion);
+}

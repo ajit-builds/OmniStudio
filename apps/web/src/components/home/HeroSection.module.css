@@ -1,0 +1,135 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(2rem, 5vw, 4.5rem) var(--page-gutter) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+  width: 100%;
+  max-width: var(--content-width-wide);
+  margin: auto;
+}
+
+.editorialCol {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.crosshairDetail {
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--color-ink-subtle);
+  pointer-events: none;
+  display: none;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: var(--text-display-hero);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.statement {
+  font-family: var(--font-editorial);
+  font-size: var(--text-editorial-lead);
+  font-style: italic;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-editorial);
+  color: var(--color-ink);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.supportCopy {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+  max-width: 460px;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.canvasCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.systemBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: var(--content-width-wide);
+  margin: clamp(2rem, 4vw, 3.5rem) auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-primary);
+}
+
+.systemGroup {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.systemItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-vermilion);
+  display: inline-block;
+}
+
+.statusDotActive {
+  background-color: var(--color-ink);
+}
+
+@media (min-width: 980px) {
+  .heroGrid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .crosshairDetail {
+    display: block;
+  }
+}

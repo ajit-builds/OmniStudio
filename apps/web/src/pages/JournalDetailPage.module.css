@@ -1,0 +1,11 @@
+.detailPage {
+  min-height: 100vh;
+  background-color: var(--surface-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.contentSection {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+  background-color: var(--surface-primary);
+}

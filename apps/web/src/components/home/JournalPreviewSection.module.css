@@ -1,0 +1,200 @@
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  border-top: 1px solid var(--border-primary);
+  background-color: var(--surface-primary);
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.sectionLead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-vermilion);
+}
+
+.leadBullet {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-vermilion);
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 820px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-1);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  line-height: var(--lh-tight);
+}
+
+.subtitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-editorial-lead);
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+.editorialDisclaimer {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  max-width: 540px;
+}
+
+/* Journal Layout: Featured Top + Split Secondary */
+.journalLayout {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.featuredArticle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid var(--border-primary);
+  background-color: var(--surface-primary);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.featuredArticle:hover {
+  border-color: var(--color-ink);
+}
+
+.articleMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.metaTopic {
+  color: var(--color-vermilion);
+}
+
+.metaDot {
+  color: var(--color-border);
+}
+
+.metaMuted {
+  color: var(--text-secondary);
+}
+
+.featuredTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: var(--lh-tight);
+  color: var(--color-ink);
+}
+
+.featuredSubtitle {
+  font-family: var(--font-editorial);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+.featuredExcerpt {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+  max-width: 780px;
+}
+
+/* Secondary Articles Grid */
+.secondaryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.secondaryArticle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border: 1px solid var(--border-primary);
+  background-color: var(--surface-primary);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.secondaryArticle:hover {
+  border-color: var(--color-ink);
+}
+
+.secondaryTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: var(--lh-tight);
+  color: var(--color-ink);
+}
+
+.secondarySubtitle {
+  font-family: var(--font-editorial);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+.secondaryExcerpt {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+}
+
+.exploreRow {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--border-primary);
+}
+
+@media (min-width: 860px) {
+  .headerRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .secondaryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

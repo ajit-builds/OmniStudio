@@ -1,0 +1,102 @@
+.actionLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0; /* Strict non-negotiable: sharp architectural geometry */
+  white-space: nowrap;
+  user-select: none;
+  border: 1px solid transparent;
+}
+
+/* Sizes */
+.sizeSm {
+  font-size: var(--text-caption);
+  padding: 0.4rem 0.85rem;
+  line-height: 1;
+}
+
+.sizeMd {
+  font-size: 0.8125rem;
+  padding: 0.65rem 1.35rem;
+  line-height: 1;
+}
+
+.sizeLg {
+  font-size: var(--text-body-sm);
+  padding: 0.85rem 1.85rem;
+  line-height: 1;
+}
+
+/* Variants */
+.variantSolid {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  border-color: var(--color-ink);
+}
+
+.variantSolid:hover {
+  background-color: var(--color-vermilion);
+  border-color: var(--color-vermilion);
+  color: var(--color-paper);
+}
+
+.variantOutline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+.variantOutline:hover {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.variantUnderline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: none;
+  border-bottom: 1.5px solid var(--color-ink);
+  padding: 0 0 4px 0;
+  letter-spacing: var(--tracking-wider);
+}
+
+.variantUnderline:hover {
+  color: var(--color-vermilion);
+  border-bottom-color: var(--color-vermilion);
+}
+
+.variantInvertedSolid {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
+}
+
+.variantInvertedSolid:hover {
+  background-color: var(--color-vermilion);
+  border-color: var(--color-vermilion);
+  color: var(--color-paper);
+}
+
+.variantInvertedOutline {
+  background-color: transparent;
+  color: var(--color-paper);
+  border-color: var(--color-paper);
+}
+
+.variantInvertedOutline:hover {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}

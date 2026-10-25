@@ -1,0 +1,6 @@
+.servicesPage {
+  min-height: 100vh;
+  background-color: var(--surface-primary);
+  display: flex;
+  flex-direction: column;
+}
